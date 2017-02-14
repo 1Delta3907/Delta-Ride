@@ -1,10 +1,18 @@
 function caloriesBurned(distance, time, weight){
 
+	// time is in hours
+	// weight is in pounds
+	// distance in km
+
 	var calories;
 	var speed;
 	var caloriesBurned
 
 	speed = distance / time;
+
+	// checking for weight of individual
+	// then checking for their average speed
+	// then outputs approx calories burned
 
 	if (weight <= 130){
 
@@ -85,7 +93,7 @@ function caloriesBurned(distance, time, weight){
 		}
 	}
 
-	caloriesBurned = calories / time;
+	caloriesBurned = calories * time;
 	
 	return caloriesBurned;
 }
