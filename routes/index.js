@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/datahook', function(req, res, next) {
+	data = req.query
+  res.render('index', { title: 'Express' });
+});
+
 module.exports = router;
