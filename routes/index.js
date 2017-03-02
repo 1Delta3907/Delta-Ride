@@ -5,6 +5,9 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+router.post('/push_data', function(req,res,next){
+    console.log(req.body)
+});
 
 router.get('/datahook', function(req, res, next) {
 	data = req.query
