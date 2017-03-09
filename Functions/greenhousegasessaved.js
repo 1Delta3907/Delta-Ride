@@ -2,7 +2,11 @@ function GreenhouseGasesSaved(efficency, distance){
 
 	var FuelUsed;
 	var GreenhouseGas
+	//distanmce is in m
+	//efficency is L/100 km
 
+	distance = distance/1000;
+	
 	FuelUsed = (efficency/100)*distance;
 
 	//convert to gallons
