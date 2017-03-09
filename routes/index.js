@@ -6,15 +6,25 @@ var path= require("path");
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+router.post('/push_data', function(req,res,next){
+    console.log(req.body)
+    res.send("text")
+});
 
 router.get('/datahook', function(req, res, next) {
 	data = req.query
+	console.log(data)
   res.render('index', { title: 'Express' });
 });
 
+<<<<<<< HEAD
 router.get('/deltaride', function(req, res, next) {
  //res.render('index', { title: 'Express' });
  res.sendFile(path.join(__dirname,'..','views/dashboard1.html'))
 });
+=======
+>>>>>>> origin/master
 
 module.exports = router;
+
+

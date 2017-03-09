@@ -8,6 +8,10 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var mongoose = require('mongoose');
+var connectionURL = 'mongodb://admin:admin@ds113630.mlab.com:13630/delta_ride';
+mongoose.connect(connectionURL)
+
 var app = express();
 
 // view engine setup
