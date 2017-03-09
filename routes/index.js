@@ -23,6 +23,7 @@ router.get('/deltaride', function(req, res, next) {
  res.sendFile(path.join(__dirname,'..','views/dashboard1.html'))
 });
 
+
 module.exports = router;
 
 
