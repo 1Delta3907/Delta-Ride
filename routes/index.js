@@ -4,7 +4,8 @@ var path= require("path");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+//  res.render('index', { title: 'Express' });
+ res.sendFile(path.join(__dirname,'..','views/login.html'))
 });
 router.post('/push_data', function(req,res,next){
     console.log(req.body)
@@ -16,7 +17,6 @@ router.get('/datahook', function(req, res, next) {
 	console.log(data)
   res.render('index', { title: 'Express' });
 });
-
 
 router.get('/deltaride', function(req, res, next) {
  //res.render('index', { title: 'Express' });
