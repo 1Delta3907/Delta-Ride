@@ -40,7 +40,7 @@ db.on('connected',function(){
     console.log('connected');
 });
 
-//star express application
+//start express application
 var app = express();
 
 // view engine setup

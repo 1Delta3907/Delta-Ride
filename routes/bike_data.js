@@ -1,3 +1,5 @@
+//code to save a csv file to database
+
 var mongoose = require('mongoose');
 var csv = require("fast-csv");
 
@@ -9,7 +11,7 @@ var dataSchema = new mongoose.Schema({
 mongoose.model('bike_data_set', dataSchema);
 var bike_data_set = mongoose.model('bike_data_set');
 
-//connect to mongo database
+/*//connect to mongo database
 var connectionURL = 'mongodb://admin:admin@ds113630.mlab.com:13630/delta_ride';
 var db = mongoose.connection;
 mongoose.connect(connectionURL)
@@ -27,7 +29,7 @@ db.on('disconnected', function(){
 //when we connect to mongo, show this in console
 db.on('connected',function(){
     console.log('connected');
-
+*/
 
 csv.fromPath("data/bikedata.csv", {headers : true})
 	.on("data", function (data){
@@ -46,7 +48,7 @@ csv.fromPath("data/bikedata.csv", {headers : true})
 	.on("end", function(){
 		console.log("done");
 	});
-});
+
 
 //end connection to mongo in case something goes wrong
 
