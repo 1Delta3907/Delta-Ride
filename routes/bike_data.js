@@ -32,7 +32,7 @@ db.on('connected',function(){
 */
 
 csv.fromPath("data/bikedata.csv", {headers : true})
-	csv.on("data", function (data){
+	.on("data", function (data){
 
 		var record = new bike_data_set(data);
 		record.save( function(err, user){
@@ -43,8 +43,8 @@ csv.fromPath("data/bikedata.csv", {headers : true})
 				console.log(err);
 			}
 		});
-	});
-	csv.on("end", function(){
+	})
+	.on("end", function(){
 		console.log("done");
 	});
 
