@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var path= require("path");
-var dataInput = require('./routes/bike_data');
+var dataInput = require('./bike_data.js');
 var csv = require("fast-csv");
 
 /* GET home page. */
