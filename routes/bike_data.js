@@ -32,7 +32,7 @@ db.on('connected',function(){
 */
 
 csv.fromPath("data/bikedata.csv", {headers : true})
-	csv.on("data", function (data){
+	.on("data", function (data){
 		var record = new bike_data_set(data);
 		record.save( function(err, user){
 			if (!err){
@@ -41,20 +41,8 @@ csv.fromPath("data/bikedata.csv", {headers : true})
 			else {
 				console.log(err);
 			}
-		});
+		}
 	})
 	.on("end", function(){
 		console.log("done");
 	});
-
-
-//end connection to mongo in case something goes wrong
-
-/*process.on('SIGINT', function() {
- 
-    mongoose.connection.close(function () {
- 
-        process.exit(0);
- 
-    });
-}); */
