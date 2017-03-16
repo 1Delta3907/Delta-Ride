@@ -44,7 +44,6 @@ csv.fromPath("data/bikedata.csv", {headers : true})
 			}
 		});
 	});
-});
 	csv.on("end", function(){
 		console.log("done");
 	});
