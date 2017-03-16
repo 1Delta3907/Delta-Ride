@@ -14,14 +14,14 @@ var connectionURL = 'mongodb://admin:admin@ds113630.mlab.com:13630/delta_ride';
 var db = mongoose.connection;
 
 //Schema for bike data
-var dataSchema = new mongoose.Schema({
+/*var dataSchema = new mongoose.Schema({
   "matrixNumber": Number,
   "time": Number
 });
 
 //bike data model
 mongoose.model('bike_data_set', dataSchema);
-var bike_data_set = mongoose.model('bike_data_set');
+var bike_data_set = mongoose.model('bike_data_set');*/
 
 mongoose.connect(connectionURL)
 
