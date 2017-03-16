@@ -15,6 +15,7 @@ router.get('/', function(req, res, next) {
 });*/
 
 router.get('/datahook', function(req, res, next) {
+	console.log('data coming')
 	data = req.query
 
 	//create datastream
