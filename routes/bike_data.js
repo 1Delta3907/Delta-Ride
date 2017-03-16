@@ -41,7 +41,7 @@ csv.fromPath("data/bikedata.csv", {headers : true})
 			else {
 				console.log(err);
 			}
-		}
+		})
 	})
 	.on("end", function(){
 		console.log("done");
