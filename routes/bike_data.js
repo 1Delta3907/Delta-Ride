@@ -41,9 +41,8 @@ csv.fromPath("data/bikedata.csv", {headers : true})
 			else {
 				console.log(err);
 			}
-		}
-	});
-});
+		});
+	})
 	.on("end", function(){
 		console.log("done");
 	});
@@ -51,12 +50,11 @@ csv.fromPath("data/bikedata.csv", {headers : true})
 
 //end connection to mongo in case something goes wrong
 
-process.on('SIGINT', function() {
+/*process.on('SIGINT', function() {
  
     mongoose.connection.close(function () {
  
         process.exit(0);
  
     });
- 
-});
+}); */
