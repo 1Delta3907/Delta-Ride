@@ -3,6 +3,7 @@
 	
 <link rel="stylesheet" href="/stylesheets/layout1.css">
 <script src="https://d3js.org/d3.v3.min.js"></script>
+
 </head>
 
 <!-- could use body element instead of wrap if wanted -->
@@ -11,7 +12,7 @@
   <main class="main">
     <div class="sidebar">The purpose of the Delta Ride product is to promote healty active living. Hopefully this product inspires users to utilize cycling as their primary source of transportation to reduce greenhouse gases. The user will now be able to monitor their fitness progress every cycling trip they do! 
     Last trip statistics:
-    <!--
+
     Distance travelled:
     <script>
 	function distance()
@@ -25,7 +26,6 @@
 	function greenhousegasessaved()
     </script>
     -->
-    
     </div>
     <div class="content">		
     <style>
@@ -76,7 +76,7 @@ var svg = d3.select(".content").append("svg")
     .attr("transform", 
           "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("bar-data.csv", function(error, data) {
+d3.csv("bikedata.csv", function(error, data) {
 
     data.forEach(function(d) {
         d.date = parseDate(d.date);
