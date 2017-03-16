@@ -8,10 +8,39 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+//mongoose initial connection
 var mongoose = require('mongoose');
 var connectionURL = 'mongodb://admin:admin@ds113630.mlab.com:13630/delta_ride';
+var db = mongoose.connection;
+
+//Schema for bike data
+var dataSchema = new mongoose.Schema({
+  "matrixNumber": Number,
+  "time": Number
+});
+
+//bike data model
+mongoose.model('bike_data_set', dataSchema);
+var bike_data_set = mongoose.model('bike_data_set');
+
 mongoose.connect(connectionURL)
 
+//if we have any errors, show them in console
+db.on('error', function (err) {
+    console.log('connected ' + err.stack);
+});
+ 
+//when we disconnect from mongo, show this in console
+db.on('disconnected', function(){
+    console.log('disconnected');
+});
+ 
+//when we connect to mongo, show this in console
+db.on('connected',function(){
+    console.log('connected');
+});
+
+//star express application
 var app = express();
 
 // view engine setup
