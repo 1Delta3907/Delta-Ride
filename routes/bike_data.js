@@ -1,10 +1,10 @@
 //code to save a csv file to database
 
 var mongoose = require('mongoose');
-var csv = require("fast-csv");
+var csv = require('fast-csv');
 
 var dataSchema = new mongoose.Schema({
-  "matrixNumber": Number,
+  "trip number": Number,
   "time": Number
 });
 
