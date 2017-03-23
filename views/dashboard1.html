@@ -3,29 +3,49 @@
 	
 <link rel="stylesheet" href="/stylesheets/layout1.css">
 <script src="https://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript" src = "./Functions/distance.js"></script>
+<script type="text/javascript" src = "./Functions/speed.js"></script>
+<script type="text/javascript" src = "./Functions/greenhousegasessaved.js"></script>
+<script type="text/javascript" src = "./Functions/caloriesburned.js"></script>
+<script type="text/javascript" src = "./Functions/calculateTime.js"></script>
+<script type="text/javascript" src = "./Functions/calculateRotations.js"></script>
+
+		<script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+		<script> zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+		ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];</script>
 
 </head>
 
-<!-- could use body element instead of wrap if wanted -->
 <div class="wrap" style="opacity: 1;">
-  <header>Delta Ride</header>
+  <header>
+  <font size="7"> Delta Ride</font>
+ 
+  </header>
   <main class="main">
-    <div class="sidebar">The purpose of the Delta Ride product is to promote healty active living. Hopefully this product inspires users to utilize cycling as their primary source of transportation to reduce greenhouse gases. The user will now be able to monitor their fitness progress every cycling trip they do! 
-    Last trip statistics:
+    <div class="sidebar">
+    <font size ="5">The purpose of the Delta Ride product is to promote healty active living. Hopefully this product inspires users to utilize cycling as their primary source of transportation to reduce greenhouse gases. The user will now be able to monitor their fitness progress every cycling trip they do! <br/>
+    <br/>
+    Last trip statistics:<br/>
+    <br/>
 
-    Distance travelled:
+    Distance travelled:<br/>
     <script>
+    <br/>
 	function distance()
     </script>
-    Average speed:
+    <br/>
+    Average speed:<br/>
      <script>
+     <br/>
 	function speed()
     </script>
-    Greenhouse gases saved:
+    <br/>
+    Greenhouse gases saved:<br/>
      <script>
+     <br/>
 	function greenhousegasessaved()
     </script>
-    -->
+    </font>
     </div>
     <div class="content">		
     <style>
@@ -45,7 +65,7 @@
 	}
 
 	</style>
-
+<!--
 <script>
 
 var margin = {top: 20, right: 20, bottom: 70, left: 40},
@@ -76,7 +96,7 @@ var svg = d3.select(".content").append("svg")
     .attr("transform", 
           "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("bikedata.csv", function(error, data) {
+d3.csv("bar-data.csv", function(error, data) {
 
     data.forEach(function(d) {
         d.date = parseDate(d.date);
@@ -121,4 +141,14 @@ d3.csv("bikedata.csv", function(error, data) {
 </div>
   </main>
   <footer></footer>
+<div>
+-->
+<div id='container'>
+
+<canvas id="canvasElement">
+  <p>Your browser doesn't support canvas.</p>
+</canvas>
+<div id='myChart'></div>
 </div>
+
+<script type="text/javascript" src = "dashboard.js"></script>

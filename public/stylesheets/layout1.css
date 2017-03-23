@@ -9,6 +9,20 @@ body {
 	top: 0;
 }
 
+#container {
+	position: relative;
+}
+#myChart {
+	position: absolute;
+	right:1;
+
+}
+
+#canvasElement{
+	position: absolute;
+	top:0;
+	float: left;
+}
 .wrap {
 	display: flex;
 	min-height: 100vh;
