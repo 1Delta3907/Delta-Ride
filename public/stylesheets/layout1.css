@@ -14,15 +14,14 @@ body {
 }
 #myChart {
 	position: absolute;
+	right:1;
 
 }
 
 #canvasElement{
 	position: absolute;
-	top: 0;
-	
-	right: 0;
-
+	top:0;
+	float: left;
 }
 .wrap {
 	display: flex;

@@ -157,7 +157,7 @@ var myConfig = {
                 "y": "10px",
                 "text-align": "left",
                 "background-color": "none",
-                "text": "SALES OVERVIEW",
+                "text": "Delta Ride Analytics",
                 "font-weight": "normal",
                 "font-family": "Arial",
                 "font-color": "#ffffff",
@@ -170,18 +170,18 @@ var myConfig = {
             },
             "scale-x": {
                 "values": [
-                    "J",
-                    "F",
-                    "M",
-                    "A",
-                    "M",
-                    "J",
-                    "J",
-                    "A",
-                    "S",
-                    "O",
-                    "N",
-                    "D"
+                    "Trip 1",
+                    "Trip 2",
+                    "Trip 3",
+                    "Trip 4",
+                    "Trip 5",
+                    "Trip 6",
+                    "Trip 7",
+                    "Trip 8",
+                    "Trip 9",
+                    "Trip 10",
+                    "Trip 11",
+                    "Trip 12"
                 ],
                 "flat": false,
                 "line-color": "#55717c",
@@ -209,10 +209,10 @@ var myConfig = {
             },
             "scale-y": {
                 "line-color": "none",
-                "values": "0:100000:20000",
+                "values": "0:1000:200",
                 "multiplier": true,
                 "label": {
-                    "text": "Net Profit",
+                    "text": "Calories Burnt",
                     "font-size": "11px",
                     "font-family": "Arial",
                     "font-color": "#ffffff",
@@ -237,7 +237,7 @@ var myConfig = {
                 "values": "0:500:100",
                 "multiplier": true,
                 "label": {
-                    "text": "Units Sold",
+                    "text": "Average Speed",
                     "offset-x": "5px",
                     "font-size": "11px",
                     "font-family": "Arial",
@@ -260,18 +260,18 @@ var myConfig = {
             "series": [
                 {
                     "values": [
-                        48000,
-                        31000,
-                        62000,
-                        40500,
-                        44550,
-                        29500,
-                        46000,
-                        70050,
-                        39500,
-                        45800,
-                        29000,
-                        15000
+                        4800,
+                        3100,
+                        6200,
+                        4050,
+                        4455,
+                        2950,
+                        4600,
+                        7005,
+                        3950,
+                        4580,
+                        2900,
+                        1500
                     ],
                     "type": "bar",
                     "background-color": "#6597a2",
@@ -335,7 +335,9 @@ var myConfig = {
             ]
         },
         {
+
             "type": "pie",
+            "text": "Distance per Trip",
             "width": "34%",
             "x": "66%",
             "background-color": "#454754",
@@ -469,18 +471,18 @@ var myConfig = {
             },
             "scale-x": {
                 "values": [
-                    "Jan",
-                    "Feb",
-                    "Mar",
-                    "Apr",
-                    "May",
-                    "Jun",
-                    "Jul",
-                    "Aug",
-                    "Sep",
-                    "Oct",
-                    "Nov",
-                    "Dec"
+                    "Trip 1",
+                    "Trip 2",
+                    "Trip 3",
+                    "Trip 4",
+                    "Trip 5",
+                    "Trip 6",
+                    "Trip 7",
+                    "Trip 8",
+                    "Trip 9",
+                    "Trip 10",
+                    "Trip 11",
+                    "Trip 12"
                 ],
                 "line-color": "#55717c",
                 "offset-y": "4px",
@@ -501,7 +503,7 @@ var myConfig = {
             },
             "scale-y": {
                 "line-color": "none",
-                "values": "0:50000:10000",
+                "values": "0:5000:1000",
                 "multiplier": true,
                 "guide": {
                     "line-style": "solid",
@@ -512,7 +514,7 @@ var myConfig = {
                     "visible": false
                 },
                 "label": {
-                    "text": "Sales by Employee",
+                    "text": "Greenhouse Gases Saved Per Trip",
                     "offset-x": "-5px",
                     "font-size": "11px",
                     "font-family": "Arial",
@@ -529,18 +531,18 @@ var myConfig = {
             "series": [
                 {
                     "values": [
-                        31000,
-                        39500,
-                        24300,
-                        36000,
-                        38000,
-                        45500,
-                        28500,
-                        38000,
-                        21000,
-                        17000,
-                        24000,
-                        17500
+                        3100,
+                        3950,
+                        2430,
+                        3600,
+                        3800,
+                        4550,
+                        2850,
+                        3800,
+                        2100,
+                        1700,
+                        2400,
+                        1750
                     ],
                     "background-color": "#57dde8",
                     "tooltip": {
@@ -553,18 +555,18 @@ var myConfig = {
                 },
                 {
                     "values": [
-                        11500,
-                        36750,
-                        7000,
-                        44500,
-                        11500,
-                        28450,
-                        42900,
-                        26750,
-                        13050,
-                        32600,
-                        12500,
-                        14300
+                        1150,
+                        3675,
+                        700,
+                        4450,
+                        1150,
+                        2845,
+                        4290,
+                        2675,
+                        1305,
+                        3260,
+                        1250,
+                        1430
                     ],
                     "background-color": "#978af6",
                     "tooltip": {
@@ -577,18 +579,18 @@ var myConfig = {
                 },
                 {
                     "values": [
-                        21500,
-                        29550,
-                        14500,
-                        16500,
-                        28450,
-                        35600,
-                        21550,
-                        18750,
-                        11600,
-                        7500,
-                        14750,
-                        16000
+                        2150,
+                        2955,
+                        1450,
+                        1650,
+                        2845,
+                        3560,
+                        2155,
+                        1875,
+                        1160,
+                        750,
+                        1475,
+                        1600
                     ],
                     "background-color": "#b857b4",
                     "tooltip": {
