@@ -1,6 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 html{
 	background: rgba(255,255,255,0.5) url("/stylesheets/deltapic.jpg") no-repeat 0 50%;
 	/*background-color: rgba(255,255,255,0.5)*/
+	font-family: 'Raleway', sans-serif;
 } 
 body {
 	margin:0;
@@ -10,7 +13,7 @@ body {
 }
 
 #container {
-	position: relative;
+	position: absolute;
 }
 #myChart {
 	position: absolute;

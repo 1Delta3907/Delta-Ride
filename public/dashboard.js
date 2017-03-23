@@ -15,8 +15,8 @@ for( var i = 0; i < dots; i++ ) {
     vx: 0,
     vy: -1*Math.random()-Math.random()-0.05,
     history: [],
-    size: 2,
-    color: "#F9B379"
+    size: 1,
+    color: "#3BBCFC"
   } );
 }
 
@@ -104,7 +104,7 @@ function TimeUpdate(e) {
       var dirx = particles[i].x > pt.x ? particles[i].x : pt.x;
       var diry = particles[i].y < pt.y ? particles[i].y : pt.y;
       context.quadraticCurveTo(dirx, diry, pt.x, pt.y);
-      context.strokeStyle = 'rgba(249,179,121,' + (1 - dist_2 / MAX_DIST_2) +' )'
+      context.strokeStyle = 'rgba(59,188,252,' + (1 - dist_2 / MAX_DIST_2) +' )'
       ptCons[i][j] = 1;
       ptCons[j][i] = 1;
     });
@@ -157,7 +157,7 @@ var myConfig = {
                 "y": "10px",
                 "text-align": "left",
                 "background-color": "none",
-                "text": "Delta Ride Analytics",
+                "text": "Delta Ride Analysis",
                 "font-weight": "normal",
                 "font-family": "Arial",
                 "font-color": "#ffffff",
