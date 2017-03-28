@@ -4,21 +4,20 @@
 
 	return rotations;
 }*/
-var csv= require("fast-csv");
-var counts = {};
-rows.forEach(function(r) {
-    var key = r.Day + r.What;
-    if (!counts[key]) {
-        counts[key] = {
-           day: r.Day,
-           what: r.What,
-           count: 0
-        };
-    }
-    counts[key].count++;
-});
+//var csv= require("fast-csv");
+//var counts = {};
+//rows.forEach(function(r) {
+  //  var key = r.Day + r.What;
+    //if (!counts[key]) {
+      //  counts[key] = {
+        //   day: r.Day,
+          // what: r.What,
+//           count: 0
+//        };
+  //  }
+   // counts[key].count++;
+//});
 
-var data = [];
-Object.keys(counts).forEach(function(key) {
-    data.push(counts[key]);
-});
+//var data = [];
+//Object.keys(counts).forEach(function(key) {
+//    data.push(counts[key]);
