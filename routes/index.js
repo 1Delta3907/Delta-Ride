@@ -32,10 +32,10 @@ router.get('/', function(req, res, next) {
 
 router.get('/datahook', function(req, res, next) {
 	
-	if(req.query.data.indexOf('End')){
+	data = req.query.data.split(",");
+	if(data.indexOf('End')){
 
-		endTrans = req.query.data.split(",");
-		numPackets = endTrans[1];
+		numPackets = data[1];
 		combinedData = [];
 
 		for (i =1; i <= numPackets; i++){
@@ -66,8 +66,8 @@ router.get('/datahook', function(req, res, next) {
 
 		
 	} else {
-		
-	bikedata = req.query.data.split(",");
+	
+	bikedata = data;	
 	data_num = bikedata[0];
 	coreid = req.query.coreid;
 	bikedata.shift();
