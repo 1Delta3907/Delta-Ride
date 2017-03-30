@@ -1,11 +1,12 @@
-//calculate total time
-function calculateTime(data){
+function calculateTime (data){
 
-		var time;
-		
+	var totalTime = 0;
 
+	for (i =0; i < data.length; i++){
 
+		totalTime = totalTime + data[i];
 
+	}
 
-	return time;
+	return totalTime;
 }
