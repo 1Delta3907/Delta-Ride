@@ -48,8 +48,15 @@ router.get('/datahook', function(req, res, next) {
 					console.log(err);
 			}
 			console.log("bike data is " + bikedata);
-			console.log("bike data.time is " + bikedata.time);
-			localvariable = bikedata.time;
+			for (var data in bikedata) {
+				if(!bikedata.hasOwnProperty(data)){
+					continue;
+				}
+				console.log("bike data.time is " + bikedata);
+			}
+			
+			//console.log("bike data.time is " + bikedata.time);
+			//localvariable = bikedata.time;
 			console.log("localvariable is " + localvariable);
 				for (j = 0; j < localvariable.length; j++){
 					combinedData.push(localvariable[j]);

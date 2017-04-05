@@ -209,8 +209,8 @@ var myConfig = {
             },
             "scale-y": {
                 "line-color": "none",
-                "values": "0:1000:200",
-                "multiplier": true,
+                "values": "0:1500:300",
+                "multiplier": false,
                 "label": {
                     "text": "Calories Burnt",
                     "font-size": "11px",
@@ -234,7 +234,7 @@ var myConfig = {
             },
             "scale-y-2": {
                 "line-color": "none",
-                "values": "0:500:100",
+                "values": "0:40:8",
                 "multiplier": true,
                 "label": {
                     "text": "Average Speed",
@@ -260,18 +260,19 @@ var myConfig = {
             "series": [
                 {
                     "values": [
-                        4800,
-                        3100,
-                        6200,
-                        4050,
-                        4455,
-                        2950,
-                        4600,
-                        7005,
-                        3950,
-                        4580,
-                        2900,
-                        1500
+                        555,
+                        164,
+                        1455,
+                        989,
+                        598,
+                        458,
+                        244,
+                        1457,
+                        463,
+                        469,
+                        454,
+                        347,
+                        487
                     ],
                     "type": "bar",
                     "background-color": "#6597a2",
@@ -294,18 +295,18 @@ var myConfig = {
                 },
                 {
                     "values": [
-                        110,
-                        58,
-                        104,
-                        357,
-                        294,
-                        367,
-                        285,
-                        340,
-                        397,
-                        425,
-                        254,
-                        187
+                        10,
+                        22,
+                        18,
+                        14,
+                        17,
+                        13,
+                        19,
+                        12,
+                        10,
+                        8,
+                        30,
+                        11
                     ],
                     "type": "line",
                     "line-color": "#96feff",
@@ -334,7 +335,7 @@ var myConfig = {
                 }
             ]
         },
-        {
+        /*{
 
             "type": "pie",
             "text": "Distance per Trip",
@@ -450,7 +451,7 @@ var myConfig = {
                     }
                 }
             ]
-        },
+        },*/
         {
             "type": "bar",
             "width": "100%",
@@ -503,7 +504,7 @@ var myConfig = {
             },
             "scale-y": {
                 "line-color": "none",
-                "values": "0:5000:1000",
+                "values": "0:50:10",
                 "multiplier": true,
                 "guide": {
                     "line-style": "solid",
@@ -531,20 +532,20 @@ var myConfig = {
             "series": [
                 {
                     "values": [
-                        3100,
-                        3950,
-                        2430,
-                        3600,
-                        3800,
-                        4550,
-                        2850,
-                        3800,
-                        2100,
-                        1700,
-                        2400,
-                        1750
+                       22,
+                       54,
+                       31,
+                       10,
+                       15,
+                       24,
+                       35,
+                       42,
+                       12,
+                       18,
+                       19,
+                       13
                     ],
-                    "background-color": "#57dde8",
+                    "background-color": "#30CD20",
                     "tooltip": {
                         "background-color": "#54ced4",
                         "font-color": "#454754",
@@ -553,7 +554,7 @@ var myConfig = {
                         "padding": "5px 10px"
                     }
                 },
-                {
+                /*{
                     "values": [
                         1150,
                         3675,
@@ -600,7 +601,7 @@ var myConfig = {
                         "shadow": false,
                         "padding": "5px 10px"
                     }
-                }
+                }*/
             ]
         }
     ]
