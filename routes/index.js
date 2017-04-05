@@ -4,9 +4,10 @@ var path= require("path");
 var csv = require("fast-csv");
 var fs = require('fs');
 var mongoose = require('mongoose');
+var combinedData = [];
 
 var dataSchema = new mongoose.Schema({
-  "trip_number": Number,
+  "coreId": String,
   "time": Array,
   "date": Date
 });
@@ -22,7 +23,7 @@ var Tbike_data_set = mongoose.model('Tbike_data_set', newDataSchema);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-//  res.render('index', { title: 'Express' });++
+
  res.sendFile(path.join(__dirname,'..','views/login.html'))
 });
 /*router.post('/push_data', function(req,res,next){
@@ -32,50 +33,98 @@ router.get('/', function(req, res, next) {
 
 router.get('/datahook', function(req, res, next) {
 	
+	console.log(req.query);
 	data = req.query.data.split(",");
-	if(data.indexOf('End')){
+	if(data[0]== 'End'){
 
-		numPackets = data[1];
-		combinedData = [];
+		console.log(data);
+		//numPackets = data[1];
+		
+		//exitNum = (parseInt(data[1]));
 
-		for (i =1; i <= numPackets; i++){
 
-			bikedata.findOne({trip_number: i}, function (err, i){
+		bike_data_set.find({coreId : '390022001447343338333633'}, function(err, bikedata){
+			if (err){
+					console.log(err);
+			}
+			console.log("bike data is " + bikedata);
+			console.log("bike data.time is " + bikedata.time);
+			localvariable = bikedata.time;
+			console.log("localvariable is " + localvariable);
+				for (j = 0; j < localvariable.length; j++){
+					combinedData.push(localvariable[j]);
+				}
+			console.log("combined data is equal to " + combinedData);
+
+			console.log("saving data");
+					var recordTotal = new Tbike_data_set({trip_number : 1, time: combinedData, date: new Date().toISOString()})
+					recordTotal.save(function(err, data){
+						if (err){
+							console.log(err);
+						}
+					});
+		});
+
+
+		
+
+		/*for (i =1; i <= numPackets; i++){
+			console.log('iteration of forloop : ' + i)
+
+			bike_data_set.findOne({trip_number: i}, function (err, bikedata){
 				if (err){
 					console.log(err);
 				}
-				console.log(bikedata); //for testing
-			});
+				//console.log(bikedata); //for testing
+				tripVariable = bikedata.trip_number;
+				localvariable = bikedata.time;
+				console.log(localvariable);
+				for (j = 0; j < localvariable.length; j++){
+					combinedData.push(localvariable[j]);
+					//console.log(localvariable[j]);
+				}	
+			console.log("combined data is equal to " + combinedData);
+			console.log(i);
+			console.log(exitNum);
+			if (i == exitNum){
 
-			for (i = 0; i < bikedata.length; i++){
-				combinedData.push(bikedata[i]);
+				console.log("saving data");
+					var recordTotal = new Tbike_data_set({trip_number : tripVariable, time: combinedData, date: new Date().toISOString()})
+					recordTotal.save(function(err, data){
+						if (err){
+							console.log(err);
+						}
+					});
 			}
+			});	
 		}
-
-		console.log(combinedData); //for testing
-
-		var recordTotal = new Tbike_data_set({trip_number : 1, time: combinedData, date: new Date().toISOString()})
-		recordTotal.save(function(err, data){
-			if (err){
-				console.log(err);
-			}
-		});
-
-		bikedata.remove({});;
-		//remove all documents from bike datas collection
+*/
+		
+		/*if (combinedData != []) {
+			mongoose.connection.db.dropCollection('bike datas', function(err, result) {
+				if (err){
+					console.log(err);
+				}
+			});
+			mongoose.connection.db.dropDatabase(function(err, result) {
+				if (err){
+					console.log(err);
+				}
+			});
+		}	
+	*/	//remove all documents from bike datas collection
 
 		
 	} else {
 	
 	bikedata = data;	
-	data_num = bikedata[0];
 	coreid = req.query.coreid;
-	bikedata.shift();
+	//bikedata.shift();
 	console.log('data coming');
-	console.log(bikedata);
-	console.log(data_num);
+	//console.log(bikedata);
+	//console.log(data_num);
 
-	var record = new bike_data_set({trip_number: data_num, time:bikedata, date: new Date().toISOString()});
+	var record = new bike_data_set({coreId: coreid, time:bikedata, date: new Date().toISOString()});
 	record.save(function(err, data){
 		if (err){
 			console.log(err);
@@ -84,12 +133,17 @@ router.get('/datahook', function(req, res, next) {
 
 	}
 
- res.sendFile(path.join(__dirname,'..','views/index.html'));
+ res.sendFile(path.join(__dirname,'..','views/dashboard1.html'));
 });
 
 router.get('/deltaride', function(req, res, next) {
- //res.render('index', { title: 'Express' });
-res.sendFile(path.join(__dirname,'..','views/dashboard1.html'))
+	//lres.sendFile(path.join(__dirname,'..','views/dashboard1.html'));
+	Tbike_data_set.find({trip_number : '1'}, function (err, localData){
+		if (err){
+			console.log(err);
+		}
+	});
+ res.render('index', { data : JSON.stringify(localData) });
 });
 
 

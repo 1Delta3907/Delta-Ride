@@ -23,7 +23,7 @@ var db = mongoose.connection;
 mongoose.model('bike_data_set', dataSchema);
 var bike_data_set = mongoose.model('bike_data_set');*/
 
-mongoose.connect(connectionURL)
+mongoose.connect(connectionURL);
 
 //if we have any errors, show them in console
 db.on('error', function (err) {
