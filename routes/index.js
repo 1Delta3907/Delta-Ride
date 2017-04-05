@@ -143,7 +143,8 @@ router.get('/deltaride', function(req, res, next) {
 			console.log(err);
 		}
 	});
- res.render('index', { data : JSON.stringify(localData) });
+res.sendFile(path.join(__dirname,'..','views/dashboard1.html'));
+ //res.render('index', { data : JSON.stringify(localData) });
 });
 
 
