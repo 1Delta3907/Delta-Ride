@@ -3,8 +3,8 @@ include dashboard1.html
 
 
 script.
-	var local_data =!{data};
-	JSON.parse(local_data);
+	var local_data = !{JSON.stringify(local_data)};
+	console.log(local_data)
 script(type='text/javascript', src='dashboard.js')
 
 

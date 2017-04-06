@@ -172,11 +172,13 @@ router.get('/deltaride', function(req, res, next) {
 		if (err){
 			console.log(err);
 		}
-		console.log(localData);
-		var newArray2 = localData.map(function(element){
-				return element.time;
-		});
-		console.log(newArray2);
+		// console.log(localData);
+		// var newArray2 = localData.map(function(element){
+		// 		return element.time;
+		
+		res.render('index', { local_data: localData });
+	});
+		//console.log(newArray2);
 		
 		// var valueWanted = ",";
 		// for(k = newArray2.length; k>=0; k--){
@@ -186,10 +188,11 @@ router.get('/deltaride', function(req, res, next) {
 		// }
 		//newArray3 = localData.time.split(",,,");
 		//console.log(newArray2);
-	});
-res.sendFile(path.join(__dirname,'..','views/dashboard1.html'));
- //res.render('index', { data : JSON.stringify(newArray2) });
+// 		localData = JSON.stringify(localData);
+// 	console.log(localData);
+//res.sendFile(path.join(__dirname,'..','views/dashboard1.html'));
+//  res.render('index', { "time" : JSON.stringify(localData) });
 });
 
-
+ 
 module.exports = router;
